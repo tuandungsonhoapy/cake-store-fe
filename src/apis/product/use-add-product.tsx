@@ -9,7 +9,7 @@ export const useAddProduct = () => {
 }
 
 export const createProductAPI = async (body: FormData): Promise<IProduct> => {
-  const response = await customHttpInstance('http://13.114.2.60:8082/api/v1').post('/products', body, {
+  const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').post('/products', body, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }
