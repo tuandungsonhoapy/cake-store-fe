@@ -11,7 +11,7 @@ import { useFetchOrders } from '@/apis/order/api'
 import { useAppSelector } from '@/shared/hook/reduxHooks'
 import { useEffect, useMemo, useState } from 'react'
 import { formatDateTimeStamp } from '@/utils/formatter'
-import { customHttpInstance } from '@/core/http/http'
+import httpRepoInstance, { customHttpInstance } from '@/core/http/http'
 
 function DetailPurchase() {
   const { orderId } = useParams<{ orderId: string }>()
