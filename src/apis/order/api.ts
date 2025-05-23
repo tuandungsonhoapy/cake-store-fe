@@ -23,11 +23,11 @@ export const useAddOrder = () => {
 }
 
 export const createOrderAPI = async (body: Order): Promise<Order> => {
-  const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').post('/orders', body)
+  const response = await httpRepoInstance.post('/orders', body)
   return response.data
 }
 export const fetchOrderAPI = async (querypath: string) => {
-  const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').get(`/orders${querypath}`)
+  const response = await httpRepoInstance.get(`/orders${querypath}`)
   return response.data
 }
 
@@ -83,6 +83,6 @@ export const useFetchOrders = ({
 }
 
 export const getOrdersAPI = async (searchPath: string) => {
-  const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').get(`/orders${searchPath}`)
+  const response = await httpRepoInstance.get(`/orders${searchPath}`)
   return response.data
 }

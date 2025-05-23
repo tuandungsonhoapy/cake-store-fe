@@ -15,13 +15,13 @@ export const productKeys = {
 }
 
 export const getProductsAPI = async (searchPath: string) => {
-  const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').get(`/products${searchPath}`)
+  const response = await httpRepoInstance.get(`/products${searchPath}`)
 
   return response.data
 }
 
 export const fetchProductByIdAPI = async (id: string) => {
-  const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').get(`/products/${id}`)
+  const response = await httpRepoInstance.get(`/products/${id}`)
 
   return response.data
 }

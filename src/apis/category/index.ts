@@ -46,7 +46,7 @@ export const getCategoryAPI = createAsyncThunk(
   async ({ page, limit, q }: { page: number; limit: number; q?: string }) => {
     let querypath = `?page=${page}&limit=${limit}`
     if (q) querypath += `&q=${q}`
-    const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').get(`/categories${querypath}`)
+    const response = await httpRepoInstance.get(`/categories${querypath}`)
     return response.data
   }
 )

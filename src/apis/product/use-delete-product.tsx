@@ -9,7 +9,7 @@ export const useDeleteProduct = () => {
 }
 
 export const deleteProductAPI = async (id: string): Promise<IProduct> => {
-  const response = await customHttpInstance('http://54.95.185.0:8082/api/v2').delete(`/products/delete/${id}`)
+  const response = await httpRepoInstance.delete(`/products/delete/${id}`)
 
   return response.data
 }

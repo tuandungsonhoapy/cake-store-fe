@@ -34,18 +34,18 @@ export const loginAPI = createAsyncThunk('profile/login', async (data: ILogin) =
 })
 
 export const logoutAPI = createAsyncThunk('profile/logout', async () => {
-  const response = await customHttpInstance('http://43.207.160.39:8083/api/v1').post('/users/logout')
+  const response = await httpRepoInstance.post('/users/logout')
 
   return response.data
 })
 
 export const updateProfileAPI = createAsyncThunk('profile/updateProfile', async (data: Partial<UserEntity>) => {
-  const response = await customHttpInstance('http://43.207.160.39:8083/api/v1').put('/users', data)
+  const response = await httpRepoInstance.put('/users', data)
   return response.data
 })
 
 export const registerAPI = createAsyncThunk('profile/register', async (data: IRegister) => {
-  const response = await customHttpInstance('http://43.207.160.39:8083/api/v1').post('/users/register', data)
+  const response = await httpRepoInstance.post('/users/register', data)
   return response.data
 })
 

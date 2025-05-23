@@ -20,7 +20,7 @@ function DetailPurchase() {
 
   useEffect(() => {
     if (orderId) {
-      customHttpInstance('http://54.95.185.0:8082/api/v2')
+      httpRepoInstance
         .get(`/orders/${orderId}`)
         .then((res) => setOrder(res.data))
         .catch((err) => console.error('Error fetching order details:', err))

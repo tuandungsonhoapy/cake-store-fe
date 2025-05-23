@@ -25,9 +25,7 @@ export const useCategoryInfo = () => {
 
 export const categoryApi = {
   async getCategoryInfo(): Promise<CategoryResponse[]> {
-    const res = await customHttpInstance('http://54.95.185.0:8082/api/v2')
-      .get('/categories/getAll')
-      .then((res) => res.data)
+    const res = await httpRepoInstance.get('/categories/getAll').then((res) => res.data)
     return res
   }
 }
