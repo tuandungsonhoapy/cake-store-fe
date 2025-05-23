@@ -29,8 +29,7 @@ interface IStore {
 }
 
 export const loginAPI = createAsyncThunk('profile/login', async (data: ILogin) => {
-  const response = await customHttpInstance('http://43.207.160.39:8083/api/v1').post('/users/login', data)
-
+  const response = await customHttpInstance('/api/v1').post('/users/login', data)
   return response.data
 })
 
